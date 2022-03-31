@@ -1,11 +1,11 @@
 import sys
-print("Programa que muestra los numeros primos")
+print("Programma che visualizza i numeri primi")
 # prime number calculator: find all primes up to n
 try:
     max = int(sys.argv[1])
-    print("Numeros primos hasta", max)
+    print("Numeri primi fino a", max)
 except:
-    max = int(input("¿Encuentra los numeros primos hasta? : "))
+    max = int(input("Trova i numeri primi fino a?: "))
 primeList = []
 #for loop for checking each number
 for x in range(2, max + 1):
@@ -24,9 +24,9 @@ print(primeList)
 # prime number calculator: find the first n primes
 try:
     count = int(sys.argv[2])
-    print(f"Estos son los primeros {sys.argv[2]} numeros primos.")
+    print(f"Questi sono i primi {sys.argv[2]} numeri primi.")
 except:
-    count = int(input("¿Cuantos numeros primos quieres encontrar?: "))
+    count = int(input("Quanti numeri primi vuoi trovare?: "))
 primeList = []
 x = 2
 while len(primeList) < count:
