@@ -12,3 +12,4 @@ Este repositorio pertenece a las practica de la materia Ingeniería de software 
 
 ### Trabajos prácticos
 * Trabajo práctico N°1: Gestión de la configuracion.
+* Trabajo práctico N°2: Uso de python, pip y jupyter notebook.
