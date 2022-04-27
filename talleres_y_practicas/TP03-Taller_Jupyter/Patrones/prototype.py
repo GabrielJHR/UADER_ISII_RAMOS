@@ -90,14 +90,15 @@ if __name__ == "__main__":
     shallow_copied_component.some_list_of_objects.append("another object")
     if component.some_list_of_objects[-1] == "another object":
         print(
-            "Adding elements to `shallow_copied_component`'s "
-            "some_list_of_objects adds it to `component`'s "
+			"Agregando elementos a `shallow_copied_component`'s "
+            "Agregando elementos a `shallow_copied_component`'s "
+            "some_list_of_objects lo añade a `component`'s "
             "some_list_of_objects."
         )
     else:
         print(
-            "Adding elements to `shallow_copied_component`'s "
-            "some_list_of_objects doesn't add it to `component`'s "
+            "Agregando elementos a `shallow_copied_component`'s "
+            "some_list_of_objects no se agrega a `component`'s "
             "some_list_of_objects."
         )
 
@@ -105,14 +106,14 @@ if __name__ == "__main__":
     component.some_list_of_objects[1].add(4)
     if 4 in shallow_copied_component.some_list_of_objects[1]:
         print(
-            "Changing objects in the `component`'s some_list_of_objects "
-            "changes that object in `shallow_copied_component`'s "
+            "Cambiando objetos en `component`'s some_list_of_objects "
+            "Cambia este objeto en `shallow_copied_component`'s "
             "some_list_of_objects."
         )
     else:
         print(
-            "Changing objects in the `component`'s some_list_of_objects "
-            "doesn't change that object in `shallow_copied_component`'s "
+            "Cambiando objetos en `component`'s some_list_of_objects "
+            "No se cambia este objeto en `shallow_copied_component`'s "
             "some_list_of_objects."
         )
 
@@ -123,14 +124,14 @@ if __name__ == "__main__":
     deep_copied_component.some_list_of_objects.append("one more object")
     if component.some_list_of_objects[-1] == "one more object":
         print(
-            "Adding elements to `deep_copied_component`'s "
-            "some_list_of_objects adds it to `component`'s "
+            "Agregando elementos a `deep_copied_component`'s "
+            "some_list_of_objects añade a este a `component`'s "
             "some_list_of_objects."
         )
     else:
         print(
-            "Adding elements to `deep_copied_component`'s "
-            "some_list_of_objects doesn't add it to `component`'s "
+            "Agregando elementos a `deep_copied_component`'s "
+            "some_list_of_objects no lo agrega a `component`'s "
             "some_list_of_objects."
         )
 
@@ -138,14 +139,14 @@ if __name__ == "__main__":
     component.some_list_of_objects[1].add(10)
     if 10 in deep_copied_component.some_list_of_objects[1]:
         print(
-            "Changing objects in the `component`'s some_list_of_objects "
-            "changes that object in `deep_copied_component`'s "
+            "Cambiando objeto en `component`'s some_list_of_objects "
+            "Cambia los objetos a `deep_copied_component`'s "
             "some_list_of_objects."
         )
     else:
         print(
-            "Changing objects in the `component`'s some_list_of_objects "
-            "doesn't change that object in `deep_copied_component`'s "
+            "Cambiando objetos en `component`'s some_list_of_objects "
+            "Vo se cambia el objeto en `deep_copied_component`'s "
             "some_list_of_objects."
         )
 
@@ -158,7 +159,6 @@ if __name__ == "__main__":
         f"{id(deep_copied_component.some_circular_ref.parent.some_circular_ref.parent)}"
     )
     print(
-        "^^ This shows that deepcopied objects contain same reference, they "
-        "are not cloned repeatedly."
+        "^^ Esto muestra que los objetos copiados en profundidad contienen la misma referencia, no se clonan repetidamente."
     )
 

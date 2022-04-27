@@ -70,13 +70,13 @@ class ConcreteBuilder1(Builder):
         return product
 
     def produce_part_a(self) -> None:
-        self._product.add("PartA1")
+        self._product.add("ParteA1")
 
     def produce_part_b(self) -> None:
-        self._product.add("PartB1")
+        self._product.add("ParteB1")
 
     def produce_part_c(self) -> None:
-        self._product.add("PartC1")
+        self._product.add("ParteC1")
 
 
 class Product1():
@@ -96,7 +96,7 @@ class Product1():
         self.parts.append(part)
 
     def list_parts(self) -> None:
-        print(f"Product parts: {', '.join(self.parts)}", end="")
+        print(f"Partes del producto: {', '.join(self.parts)}", end="")
 
 
 class Director:
@@ -148,20 +148,20 @@ if __name__ == "__main__":
     builder = ConcreteBuilder1()
     director.builder = builder
 
-    print("Standard basic product: ")
+    print("Producto basico: ")
     director.build_minimal_viable_product()
     builder.product.list_parts()
 
     print("\n")
 
-    print("Standard full featured product: ")
+    print("Producto full: ")
     director.build_full_featured_product()
     builder.product.list_parts()
 
     print("\n")
 
     # Remember, the Builder pattern can be used without a Director class.
-    print("Custom product: ")
+    print("Producto personalizdo: ")
     builder.produce_part_a()
     builder.produce_part_b()
     builder.product.list_parts()
