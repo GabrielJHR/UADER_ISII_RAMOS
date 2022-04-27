@@ -9,48 +9,49 @@ from abc import ABC, abstractmethod
 
 class Creator(ABC):
     """
-    The Creator class declares the factory method that is supposed to return an
-    object of a Product class. The Creator's subclasses usually provide the
-    implementation of this method.
+    La clase Creator declara el método de fábrica que se supone que devolverá 
+    un objeto de una clase Product. Las subclases de Creator generalmente 
+    proporcionan la implementación de este método.
     """
 
     @abstractmethod
     def factory_method(self):
         """
-        Note that the Creator may also provide some default implementation of
-        the factory method.
+        Tenga en cuenta que el Creador también puede proporcionar alguna 
+        implementación predeterminada del método de fábrica.
         """
         pass
 
     def some_operation(self) -> str:
         """
-        Also note that, despite its name, the Creator's primary responsibility
-        is not creating products. Usually, it contains some core business logic
-        that relies on Product objects, returned by the factory method.
-        Subclasses can indirectly change that business logic by overriding the
-        factory method and returning a different type of product from it.
+        También tenga en cuenta que, a pesar de su nombre, la responsabilidad 
+        principal del Creador no es crear productos. Por lo general, 
+        contiene alguna lógica comercial central que se basa en los objetos 
+        Producto, devueltos por el método de fábrica.
+		Las subclases pueden cambiar indirectamente esa lógica empresarial 
+		anulando el método de fábrica y devolviendo un tipo diferente de producto.
         """
 
         # Call the factory method to create a Product object.
         product = self.factory_method()
 
         # Now, use the product.
-        result = f"Creator: The same creator's code has just worked with {product.operation()}\n"
+        result = f"Creadora: El mismo código del creador acaba de funcionar con {product.operation()}\n"
 
         return result
 
 
 """
-Concrete Creators override the factory method in order to change the resulting
-product's type.
+Concrete Creators anula el método de fábrica para cambiar el tipo de producto resultante.
 """
 
 
 class ConcreteCreator1(Creator):
     """
-    Note that the signature of the method still uses the abstract product type,
-    even though the concrete product is actually returned from the method. This
-    way the Creator can stay independent of concrete product classes.
+	Tenga en cuenta que la firma del método todavía utiliza el tipo de 
+	producto abstracto, aunque el método devuelve el producto concreto. 
+	De esta manera, el Creador puede mantenerse independiente de 
+	las clases de productos concretos.
     """
 
     def factory_method(self) -> Product:
@@ -64,8 +65,8 @@ class ConcreteCreator2(Creator):
 
 class Product(ABC):
     """
-    The Product interface declares the operations that all concrete products
-    must implement.
+    La interfaz Producto declara las operaciones que todos los 
+    productos concretos deben implementar.
     """
 
     @abstractmethod
@@ -74,18 +75,18 @@ class Product(ABC):
 
 
 """
-Concrete Products provide various implementations of the Product interface.
+Concrete Products proporciona varias implementaciones de la interfaz del Producto.
 """
 
 
 class ConcreteProduct1(Product):
     def operation(self) -> str:
-        return "{Result of the ConcreteProduct1}"
+        return "{Resultado del ConcreteProduct1}"
 
 
 class ConcreteProduct2(Product):
     def operation(self) -> str:
-        return "{Result of the ConcreteProduct2}"
+        return "{Resultado del ConcreteProduct2}"
 
 
 def client_code(creator: Creator) -> None:
@@ -95,16 +96,16 @@ def client_code(creator: Creator) -> None:
     the base interface, you can pass it any creator's subclass.
     """
 
-    print(f"Client: I'm not aware of the creator's class, but it still works.\n"
+    print(f"Cliente: No conozco la clase del creador, pero aún asi funciona.\n"
           f"{creator.some_operation()}", end="")
 
 
 if __name__ == "__main__":
 
     print("\n\n")
-    print("App: Launched with the ConcreteCreator1.")
+    print("App: Lanzada con ConcreteCreator1.")
     client_code(ConcreteCreator1())
     print("\n")
 
-    print("App: Launched with the ConcreteCreator2.")
+    print("App: Lanzada con ConcreteCreator2.")
     client_code(ConcreteCreator2())
