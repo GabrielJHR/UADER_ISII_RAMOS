@@ -9,9 +9,6 @@ from abc import ABC, abstractmethod
 
 class Creator(ABC):
     """
-    La clase Creator declara el método de fábrica que se supone que devolverá 
-    un objeto de una clase Product. Las subclases de Creator generalmente 
-    proporcionan la implementación de este método.
     """
 
     @abstractmethod
