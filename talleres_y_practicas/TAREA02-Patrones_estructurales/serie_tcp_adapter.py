@@ -3,16 +3,17 @@
 #* excerpt from https://refactoring.guru/design-patterns/adapter/python/example
 #*--------------------------------------------------
 
+#Target
 class Aplicacion:
     def request(self) -> str:
         return "La aplicacion tiene que recibir un mensaje desde el servidor."
 
-
+#Adaptee
 class Servidor:
     def specific_request(self) -> str:
         return "Mensaje encriptado: Mensaje desde el servidor"
 
-
+#Adapter
 class AdaptadorSerieTCP(Aplicacion, Servidor):
     def request(self) -> str:
         return f"Servidor: {self.specific_request()[20:]} "
