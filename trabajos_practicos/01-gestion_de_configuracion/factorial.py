@@ -19,11 +19,16 @@ def factorial(num):
             fact *= num 
             num -= 1
         return fact 
+    
+def calcular_rango(min, max):
+    for num in range(min, max + 1):
+        print("Factorial ",num,"! es ", factorial(num))
 
 if len(sys.argv) == 1:
-   num = int(input("Ingresar un numero para calcular su factorial: "))
+   num_min = int(input("Ingresar un minimo para calcular su factorial: "))
+   num_max = int(input("Ingresar un maximo para calcular su factorial: "))
 else:
-    num=int(sys.argv[1])
+    num_min=int(sys.argv[1])
+    num_max=int(sys.argv[2])
 
-print("Factorial ",num,"! es ", factorial(num)) 
-
+calcular_rango(num_min, num_max)
