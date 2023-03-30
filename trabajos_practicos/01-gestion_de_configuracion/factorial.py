@@ -25,10 +25,11 @@ def calcular_rango(min, max):
         print("Factorial ",num,"! es ", factorial(num))
 
 if len(sys.argv) == 1:
-   num_min = int(input("Ingresar un minimo para calcular su factorial: "))
-   num_max = int(input("Ingresar un maximo para calcular su factorial: "))
+   num_min = int(input("Ingresar un minimo para calcular su factorial sin limite: "))
+   num_max = int(input("Ingresar un maximo para calcular su factorial sin limite: "))
 else:
     num_min=int(sys.argv[1])
     num_max=int(sys.argv[2])
 
-calcular_rango(num_min, num_max)
+calcular_rango(1, num_max)
+calcular_rango(num_min, 60)
