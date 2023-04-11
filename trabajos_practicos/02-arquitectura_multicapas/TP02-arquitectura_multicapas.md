@@ -6,7 +6,7 @@
 1. Se implemento el codigo necesario para hacer consultas a la API de ChatGPT y se pusheo el [commit](https://github.com/GabrielJHR/UADER_ISII_RAMOS/commit/6e81e76598a8a467f61992ef562c9da4ebca0237) en GitHub.
 2. Se agregó la estructura Try/Except para controlar los posibles errores y se subio a GitHub en el siguiente [commit](https://github.com/GabrielJHR/UADER_ISII_RAMOS/commit/a928a8d8025d249c959f785bfc0fba542283c4fa).
 3. Se agrego la capacidad de navegar en el historial de para recuperar los prompts anteriores con el modulo pyreadline3 que es una alternativa al modulo readline disponible para sistemas UNIX. En el siguiente [commit](https://github.com/GabrielJHR/UADER_ISII_RAMOS/commit/a928a8d8025d249c959f785bfc0fba542283c4fa) se guardaron los cambios en el codigo para implementar esta funcionalidad.
-4. Se modifico el codigo para agregar la funcionalidad de que si en el prompt se escribe el parametro --convers se guarda en el buffer tanto las preguntas como las respuestas de ChatGPT. De esta forma a la api se le envia el buffer completo usando tanto las preguntas como las respuestas. En GitHub esta el [commit](https://github.com/GabrielJHR/UADER_ISII_RAMOS/commit/a928a8d8025d249c959f785bfc0fba542283c4fa) con las modificaciones.
+4. Se modifico el codigo para agregar la funcionalidad de que si en el prompt se escribe el parametro --convers se guarda en el buffer tanto las preguntas como las respuestas de ChatGPT. De esta forma a la api se le envia el buffer completo usando tanto las preguntas como las respuestas. En GitHub esta el [commit](https://github.com/GabrielJHR/UADER_ISII_RAMOS/commit/89763598141cc0b0f4ff920b601aea0665ddf7d9) con las modificaciones.
 5. Se ejecuto la aplicacion multimetric sobre el codigo para analizarlo.
 ```json
 {
