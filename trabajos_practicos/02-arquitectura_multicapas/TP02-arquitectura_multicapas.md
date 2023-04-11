@@ -126,6 +126,17 @@
   }
 }
 ```
+
+> La metrica *'halstead_effort'* se refiere a una medida de la cantidad de esfuerzo necesario para implementar un programa de software.
+
+> La métrica *'halstead_timerequired'* es una medida que proporciona una estimación del tiempo que se necesita para escribir un programa de software basándose en la complejidad del mismo.
+
+  La diferencia entre el numero arrojado en la metrica halstead_bugprop en el commit inicial con respecto al commit en el que se arreglaron los errores es:
+  * En el commit inicial: 0.12994
+  * En el commit sin errores: 0.17794
+
+  El numero de esta metrica a medida que se iban haciendo modificaciones al codigo iba aumentando.
+
 6. Se instalo pylint y se ejecuto por primera vez arrojando estos resultados:
 ![Primera imagen](img/01.png)
 
