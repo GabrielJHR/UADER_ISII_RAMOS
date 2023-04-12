@@ -3,6 +3,7 @@ Este modulo hace llamadas a la api de ChatGPT
 """
 import openai
 import pyreadline3
+import sys
 
 # Se configura el objeto readline para obtener el historial
 readline = pyreadline3.Readline()
@@ -31,6 +32,11 @@ MODEL_ENGINE = "text-davinci-003"
 # dadas por ChatGPT
 buffer = ""
 
+if len(sys.argv) > 1:
+    ARGUMENTO = sys.argv[1]
+else:
+    ARGUMENTO = ""
+
 try:
     while True:
         # .....[otra lógica necesaria – el texto del prompt debe colocarse en userText]…..
@@ -42,10 +48,10 @@ try:
         if userText:
             try:
                 # Se verifica si el usuario o ChatGPT ha indicado que la conversación está en curso
-                if "--convers" in buffer or "--convers" in userText:
+                if "--convers" in ARGUMENTO:
                     # Si se indica que la conversación está en curso, se agrega la entrada del
                     # usuario al buffer y se muestra la respuesta de ChatGPT
-                    buffer += f"You: {userText}\n"
+                    buffer += userText
                 else:
                     # Si no se indica que la conversación está en curso, se sobrescribe el contenido
                     # del buffer con la entrada del usuario actual
@@ -72,7 +78,7 @@ try:
                 print(f"chatGPT: {response}\n\n")
 
                 # Se agrega la respuesta del modelo al buffer
-                buffer += f"chatGPT: {response}\n\n"
+                buffer += response
 
                 # Se agrega la pregunta anterior del usuario al historial de readline
                 readline.add_history(userText)
