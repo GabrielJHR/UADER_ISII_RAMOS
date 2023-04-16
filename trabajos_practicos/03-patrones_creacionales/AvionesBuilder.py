@@ -4,9 +4,6 @@ import os
 class Body:
     shape = None
 
-class Wheel:
-    size = None
-
 class Wing:
     size = None
 
@@ -31,10 +28,10 @@ class Director:
         vehicle.setBody(body)
         
         # Luego el motor
-        wing1 = self.__builder.getTurbine()
-        wing2 = self.__builder.getTurbine()
-        vehicle.attachTurbine(wing1)
-        vehicle.attachTurbine(wing2)
+        turbine1 = self.__builder.getTurbine()
+        turbine2 = self.__builder.getTurbine()
+        vehicle.attachTurbine(turbine1)
+        vehicle.attachTurbine(turbine2)
         
         # Luego las alas
         wing1 = self.__builder.getWing()
